@@ -1,0 +1,4 @@
+@model Doctor
+@{ViewData["Title"]="Edit Doctor";}
+<div class="page-heading"><div><h1>Edit doctor</h1><p>Update profile and availability.</p></div><a class="btn btn-outline-secondary" asp-action="Details" asp-route-id="@Model.DoctorID">Back</a></div>
+<div class="panel form-card"><div class="panel-body"><form method="post">@Html.AntiForgeryToken()<input type="hidden" asp-for="DoctorID"/><partial name="_Form" model="Model"/><div class="mt-4"><button class="btn btn-primary">Save changes</button></div></form></div></div>

@@ -1,0 +1,7 @@
+@model ErrorViewModel
+@{ ViewData["Title"] = "Error"; }
+<div class="panel p-4">
+    <h1 class="text-danger">Something went wrong.</h1>
+    <p>Please try the action again. If the problem continues, verify the SQL Server connection and database script.</p>
+    @if (Model.ShowRequestId) { <p><strong>Request ID:</strong> <code>@Model.RequestId</code></p> }
+</div>

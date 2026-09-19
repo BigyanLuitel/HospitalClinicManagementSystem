@@ -1,0 +1,11 @@
+@model Doctor
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<div class="row g-3">
+    <div class="col-md-6"><label asp-for="FullName" class="form-label"></label><input asp-for="FullName" class="form-control" /><span asp-validation-for="FullName" class="text-danger small"></span></div>
+    <div class="col-md-6"><label asp-for="Specialization" class="form-label"></label><input asp-for="Specialization" class="form-control" placeholder="e.g. Cardiology" /><span asp-validation-for="Specialization" class="text-danger small"></span></div>
+    <div class="col-md-6"><label asp-for="ContactNumber" class="form-label"></label><input asp-for="ContactNumber" class="form-control" /><span asp-validation-for="ContactNumber" class="text-danger small"></span></div>
+    <div class="col-md-6"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" /></div>
+    <div class="col-md-4"><label asp-for="AvailableDays" class="form-label"></label><input asp-for="AvailableDays" class="form-control" placeholder="e.g. Mon-Fri" /></div>
+    <div class="col-md-4"><label asp-for="ConsultationFee" class="form-label"></label><div class="input-group"><span class="input-group-text">Rs</span><input asp-for="ConsultationFee" class="form-control" /></div><span asp-validation-for="ConsultationFee" class="text-danger small"></span></div>
+    <div class="col-md-4"><label asp-for="Status" class="form-label"></label><select asp-for="Status" class="form-select"><option>Active</option><option>Inactive</option></select></div>
+</div>

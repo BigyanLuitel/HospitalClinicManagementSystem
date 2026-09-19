@@ -1,0 +1,10 @@
+@model PrescriptionFormViewModel
+@{ViewData["Title"]="Issue Prescription";}
+<div class="page-heading"><div><h1>Issue prescription</h1><p>Record medicines and dosage against an appointment.</p></div><a class="btn btn-outline-secondary" asp-action="Index">Back</a></div>
+<div class="panel form-card"><div class="panel-body"><form method="post">@Html.AntiForgeryToken()<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div><div class="row g-3">
+<div class="col-12"><label asp-for="AppointmentID" class="form-label"></label><select asp-for="AppointmentID" asp-items="Model.Appointments" class="form-select"><option value="0">Select appointment</option></select><span asp-validation-for="AppointmentID" class="text-danger small"></span></div>
+<div class="col-md-6"><label asp-for="PatientID" class="form-label"></label><select asp-for="PatientID" asp-items="Model.Patients" class="form-select"><option value="0">Select patient</option></select></div>
+<div class="col-md-6"><label asp-for="DoctorID" class="form-label"></label><select asp-for="DoctorID" asp-items="Model.Doctors" class="form-select"><option value="0">Select doctor</option></select></div>
+<div class="col-12"><label asp-for="Medicines" class="form-label"></label><textarea asp-for="Medicines" class="form-control" rows="4" placeholder="Medicine names"></textarea><span asp-validation-for="Medicines" class="text-danger small"></span></div>
+<div class="col-12"><label asp-for="Dosage" class="form-label"></label><textarea asp-for="Dosage" class="form-control" rows="3" placeholder="Dosage and instructions"></textarea></div>
+</div><div class="mt-4"><button class="btn btn-primary">Issue prescription</button></div></form></div></div>

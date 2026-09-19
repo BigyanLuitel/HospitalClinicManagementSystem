@@ -1,0 +1,10 @@
+@model BillFormViewModel
+@{ViewData["Title"]="Generate Bill";}
+<div class="page-heading"><div><h1>Generate bill</h1><p>Create a bill for a completed appointment.</p></div><a class="btn btn-outline-secondary" asp-action="Index">Back</a></div>
+<div class="panel form-card"><div class="panel-body"><form method="post">@Html.AntiForgeryToken()<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div><div class="row g-3">
+<div class="col-12"><label asp-for="AppointmentID" class="form-label"></label><select asp-for="AppointmentID" asp-items="Model.Appointments" class="form-select"><option value="0">Select completed appointment</option></select><span asp-validation-for="AppointmentID" class="text-danger small"></span></div>
+<div class="col-md-6"><label asp-for="PatientID" class="form-label"></label><select asp-for="PatientID" asp-items="Model.Patients" class="form-select"><option value="0">Select patient</option></select><span asp-validation-for="PatientID" class="text-danger small"></span></div>
+<div class="col-md-6"><label asp-for="Amount" class="form-label"></label><div class="input-group"><span class="input-group-text">Rs</span><input asp-for="Amount" class="form-control" /></div><span asp-validation-for="Amount" class="text-danger small"></span></div>
+<div class="col-md-6"><label asp-for="PaymentStatus" class="form-label"></label><select asp-for="PaymentStatus" class="form-select"><option>Unpaid</option><option>Partially Paid</option><option>Paid</option></select></div>
+<div class="col-md-6"><label asp-for="PaymentMethod" class="form-label"></label><select asp-for="PaymentMethod" class="form-select"><option value="">Not specified</option><option>Cash</option><option>Card</option><option>Insurance</option></select></div>
+</div><div class="mt-4"><button class="btn btn-primary">Generate bill</button></div></form></div></div>

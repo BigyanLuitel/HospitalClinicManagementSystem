@@ -1,0 +1,4 @@
+@model AppointmentFormViewModel
+@{ViewData["Title"]="Book Appointment";}
+<div class="page-heading"><div><h1>Book appointment</h1><p>Select patient, doctor, date and time. The system blocks doctor double-booking.</p></div><a class="btn btn-outline-secondary" asp-action="Index">Back</a></div>
+<div class="panel form-card"><div class="panel-body"><form method="post">@Html.AntiForgeryToken()<partial name="_Form" model="Model"/><div class="mt-4"><button class="btn btn-primary">Book appointment</button></div></form></div></div>
